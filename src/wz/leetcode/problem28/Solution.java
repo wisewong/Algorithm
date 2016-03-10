@@ -20,10 +20,15 @@ public class Solution {
         int i = 0,j = -1;next[0] = -1;
         while (i<needle.length()-1){
             if (j==-1 || needle.charAt(i) == needle.charAt(j)){
+//                改进前:
+//                next[++i] = ++j;
+
+//                改进后:
                 if (needle.charAt(i+1)!=needle.charAt(j+1))
                     next[++i] = ++j;
                 else
                     next[++i] = next[++j];
+
             }
             else
                 j=next[j];
@@ -40,4 +45,5 @@ public class Solution {
             return i - needle.length();
         return -1;
     }
+
 }
