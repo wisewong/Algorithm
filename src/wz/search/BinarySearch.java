@@ -8,16 +8,16 @@ package wz.search;
  */
 public class BinarySearch {
     public int binarySearch(int[] array,int target){
-        int left=0,right = array.length-1,middle;
+        int left=0,right = array.length-1,mid;
 
         while (left<=right){
-            middle = (left+right)/2;
-            if (target == array[middle])
-                return middle;
-            else if (target>array[middle])
-                left = middle+1;
+            mid = left + (right - left)/2;
+            if (target == array[mid])
+                return mid;
+            else if (target>array[mid])
+                left = mid+1;
             else
-                right = middle-1;
+                right = mid-1;
         }
         return -1;
     }
@@ -32,6 +32,35 @@ public class BinarySearch {
             return recursiveBinarySearch(array, target,start,middle-1);
         else
             return recursiveBinarySearch(array,target,middle+1,end);
+    }
+
+    /**
+     * 二分查找
+     * 若找不到，则返回最后一个小于查找值的位置
+     * @param arr
+     * @param target
+     * @return
+     */
+    private int binarySearchImprove(int[] arr,int target){
+        if (arr == null || arr.length == 0) {
+            return -2;
+        }
+        int left = 0,right = arr.length - 1, mid;
+        while(left<=right){
+            mid = left+(right-left)/2;
+            System.out.println(mid);
+            if (arr[mid] == target) {
+                return mid;
+            }
+            if (target < arr[mid]) {
+                right = mid - 1;
+            }else if (target > arr[mid]) {
+                left = mid + 1;
+            }
+        }
+        if (arr[left]<target)
+            return left;
+        return right;
     }
 
     public static void main(String[] args) {
