@@ -8,7 +8,7 @@ import java.util.Stack;
  * @author wz
  * @date 2016年03月05日 9:15
  * <p>
- * Definition for a binary tree node.
+ * Definition for a binary datastructure node.
  * public class TreeNode {
  * int val;
  * TreeNode left;

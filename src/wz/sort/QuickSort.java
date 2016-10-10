@@ -18,7 +18,7 @@ public class QuickSort {
     }
 
     private int partition(int[] array, int start, int end) {
-        swap(array, start, new Random().nextInt(end-start)+start);
+        swap(array, start, new Random().nextInt(end-start+1)+start);
         int left = start,right = end,temp = array[start];
         while (left<right){
             while (left<right && array[right]>=temp)

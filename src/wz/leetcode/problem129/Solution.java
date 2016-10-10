@@ -6,7 +6,7 @@ package wz.leetcode.problem129;
  * @author wz
  * @date 2016年03月06日 15:06
  *
- * Definition for a binary tree node.
+ * Definition for a binary datastructure node.
  * public class TreeNode {
  *     int val;
  *     TreeNode left;
