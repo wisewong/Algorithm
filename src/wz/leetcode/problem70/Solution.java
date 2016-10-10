@@ -17,12 +17,26 @@ package wz.leetcode.problem70;
  */
 public class Solution {
     public int climbStairs(int n) {
+
         if (n<=1)
             return 1;
-        int[] res = new int[n+1];
-        res[0] = res[1] = 1;
-        for (int i = 2; i <= n; i++)
-            res[i] = res[i-1] + res[i-2];
-        return res[n];
+
+        int oneStep=1,twoStep = 1,res = 0;
+
+        for (int i = 2; i <= n; i++) {
+            res = oneStep + twoStep;
+            twoStep = oneStep;
+            oneStep = res;
+        }
+
+        return res;
+
+//        if (n<=1)
+//            return 1;
+//        int[] res = new int[n+1];
+//        res[0] = res[1] = 1;
+//        for (int i = 2; i <= n; i++)
+//            res[i] = res[i-1] + res[i-2];
+//        return res[n];
     }
 }
