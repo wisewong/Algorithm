@@ -67,13 +67,16 @@ public class TreeOperation {
 
         LinkedList<TreeNode> list = new LinkedList<>();
         list.add(root);
+        // 使用null来区分一层结束
         list.add(null);
 
         TreeNode node;
         while(list.size()>0){
             node = list.pollFirst();
+            // 一层遍历完
             if (node==null) {
                 System.out.println();
+                //下一层添加null标识
                 if (list.size()>0)
                     list.add(null);
                 continue;
